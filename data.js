@@ -17,6 +17,7 @@ const proyectos = [
     { 
         titulo: "Portafolio",
         descripcion: "Un portfolio sencillo, facil de ampliar, con un diseño claro y responsive,",
+        link:"https://github.com/EstebanSM85/PortFolio",
         imagen: "portfolioNuevo.png",
         tecnologias: ["HTML", "CSS", "JavaScript"]
     },

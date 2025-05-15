@@ -115,6 +115,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     gap : 20px;
+    
 }
 .proyecto{
     flex-basis: 314px;
@@ -148,6 +149,8 @@ main {
     height: 150px;
     object-fit: cover;
     filter: grayscale(0.6);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .proyecto img:hover{
@@ -176,3 +179,45 @@ footer {
 
 
 
+@media(max-width: 650px){
+    body{
+        grid-template-columns: 1fr;   
+        grid-template-areas: 
+        "header"  "aside"  "main" "footer";
+        
+    }
+    header{
+        background-image: url("./img/fondo.jpg");
+        background-size: cover;
+        border-bottom-left-radius: 5px;
+        display: flex;
+        justify-content: center;
+    }   
+    header div{
+        margin: 20px;
+    }
+    header img{
+        max-height: 200px;
+        flex-shrink: 1;
+        margin-top: auto;
+    }
+    aside, main {
+        padding: 0px 20px;
+    }
+    aside{
+        margin-right: 0px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    aside img{
+        max-width: 150px;
+        border-radius: 100%;
+        display: block;
+        margin: 0 auto;
+    }
+    
+    .redes{
+        justify-content: space-around;
+        ;
+    }
+}
