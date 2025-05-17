@@ -24,6 +24,16 @@ proyectos.forEach(proyecto => {
     <a href="${proyecto.link}" target="_blank">Ver proyecto</a>`
 })
 
+document.querySelectorAll(".proyecto img").forEach(img => {
+    img.addEventListener("click", () => {
+        if (img.style.transform === "scale(1.5)") {
+            img.style.transform = "scale(1)";
+        } else {
+            img.style.transform = "scale(1.5)";
+        }
+    });
+});
+
 //creacion de infoPersonal
 const nuevaPresentacion = document.createElement("div");
 nuevaPresentacion.classList = "presentacion";
