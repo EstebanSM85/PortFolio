@@ -59,6 +59,10 @@ aside img{
     border-radius: 100px;
     margin: 20px 20px;
 }
+aside img:hover{
+    transform: scale(1.5);
+    transition: transform 0.3s;
+}
 aside>div{
     padding: 20px 10px;
     border-bottom: 2px solid var(--color-fondo);
@@ -160,6 +164,10 @@ main {
 .proyecto img:hover{
     filter: grayscale(0);
     transition: 0.3s;
+    transform: scale(1.1);
+    transition: transform 0.3s;
+
+
 }
 
 .proyecto div{
