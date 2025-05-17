@@ -113,5 +113,11 @@ document.addEventListener("DOMContentLoaded", () => {
             event.preventDefault(); // Detiene el envío del formulario
             return;
         }
+    });;
+});
+
+document.querySelectorAll(".proyecto a").forEach(link => {
+    link.addEventListener("click", () => {
+        alert("Vas a ser redirigido a un enlace externo.");
     });
 });
