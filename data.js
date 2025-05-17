@@ -38,8 +38,8 @@ const infoPersonal = {
         ["Inglés", "Intermedio"]
     ],
     formacion: [
-        ["HTML", 7,],[ "CSS", 6],[ "JavaScript", 6],    
-        ["Java", 8],["Sql", 7]
+        ["HTML", 7,],[ "CSS", 6],[ "JavaScript", 6],
+        ["PHP", 5],["Java", 8],["Sql", 7]
     ],
     redes:
         [

@@ -77,8 +77,9 @@ aside>div:last-of-type{
 }
 
 progress{
-    -webkit-appearance: none;
+    appearance: none;   
 }
+
 ::-webkit-progress-bar {
     background-color: var(--color-fondo);
     border-radius: 5px;
