@@ -109,12 +109,14 @@ progress{
 
 main {
     grid-area: main;
+    text-align: center;
 }
 
 #tarjetasContainer{
     display: flex;
     flex-wrap: wrap;
     gap : 20px;
+    
     
 }
 .proyecto{
@@ -123,6 +125,7 @@ main {
     flex-shrink: 1;
     display: flex;
     flex-direction: column;
+    text-align: center;
     box-shadow: 10px 10px 87px 19px rgba(0,0,0,0.75);
     -webkit-box-shadow: 10px 10px 87px 19px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 87px 19px rgba(0,0,0,0.75);
@@ -178,6 +181,47 @@ footer {
 }
 
 
+#contacto {
+    margin: 40px auto;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+    background-color: var(--color-fondo-tarjeta);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+label {
+    text-align: left;
+    font-size: large;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: var(--color-texto);
+}
+
+input, textarea {
+    width: auto;    
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    background-color: var(--color-boton);
+    color: var(--color-fondo);
+    font-size: large;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
 
 @media(max-width: 650px){
     body{
@@ -221,3 +265,4 @@ footer {
         ;
     }
 }
+
