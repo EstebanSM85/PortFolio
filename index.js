@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });;
 });
 
-document.querySelectorAll(".proyecto a").forEach(link => {
+document.querySelectorAll(".proyecto a, .redes a").forEach(link => {
     link.addEventListener("click", () => {
         alert("Vas a ser redirigido a un enlace externo.");
     });
