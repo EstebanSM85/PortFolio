@@ -15,7 +15,7 @@ proyectos.forEach(proyecto => {
     nuevoProyecto.classList= "tarjeta proyecto";
     proyectosContainer.appendChild(nuevoProyecto);
     nuevoProyecto.innerHTML = `
-    <img src="img/proyectos/${proyecto.imagen}">
+    <img src='img/proyectos/${proyecto.imagen}'>
     <div>
         <h3>${proyecto.titulo}</h3>
         <p>${proyecto.descripcion}</p>
