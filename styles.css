@@ -1,277 +1,458 @@
+/* 
+    Definición de variables CSS en :root.
+    Estas variables permiten gestionar los colores de la interfaz de manera centralizada.
+    Facilita la modificación del diseño sin necesidad de cambiar múltiples reglas de estilo.
+*/
 :root{
-    --color-texto-titulo: #ffffff;
-    --color-texto: rgba(255, 255, 255, 0.867);
-    --color-boton: #058d4e;
-    --color-fondo: #091e55;
-    --color-fondo-tarjeta: #4511be5e;
+    --color-texto-titulo: #ffffff; /* Color del texto de los títulos */
+    --color-texto: rgba(255, 255, 255, 0.867); /* Color general del texto con cierta transparencia */
+    --color-boton: #058d4e; /* Color de fondo para los botones */
+    --color-fondo: #091e55; /* Color de fondo de la página */
+    --color-fondo-tarjeta: #4511be5e; /* Color de fondo de las tarjetas */
 }
 
-
+/* 
+    Estilos generales para el cuerpo del documento.
+    Se establecen márgenes, colores y tipografía, además de definir la estructura con CSS Grid.
+*/
 body {
-    margin: 0;
-    background-color: var(--color-fondo);
-    color: var(--color-texto);
-    font-family: 'Poppins', sans-serif;
-    display: grid;
-    grid-template-areas: 
-    "aside header"
-    "aside main"
-    "footer footer";
-    grid-template-columns: 220px 1fr;   
+    margin: 0; /* Elimina los márgenes predeterminados del navegador */
+    background-color: var(--color-fondo); /* Aplica el color de fondo definido en :root */
+    color: var(--color-texto); /* Establece el color de texto usando la variable */
+    font-family: 'Poppins', sans-serif; /* Define la fuente principal de la página */
+    display: grid; /* Utiliza CSS Grid para la distribución de la página */
+    grid-template-areas: /* Define las áreas del grid, organizando aside, header, main y footer */
+        "aside header"
+        "aside main"
+        "footer footer";
+    grid-template-columns: 220px 1fr;/* Establece el tamaño de las columnas: el aside tiene 220px y el resto ocupa el espacio disponible */
 }
 
-a{
-    text-decoration: none;
-    color: var(--color-fondo);
-    background-color: var(--color-boton);
-    border-radius: 5px;
-    padding: 10px 40px;
-    font-weight: bold;
+/* 
+    Estilos generales para los enlaces <a>.
+    Se eliminan los subrayados predeterminados, se aplican colores personalizados y se les da formato de botón.
+*/
+a {
+    text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces */
+    color: var(--color-fondo); /* Establece el color del texto utilizando una variable */
+    background-color: var(--color-boton); /* Aplica un fondo con el color de los botones */
+    border-radius: 5px; /* Redondea las esquinas del enlace */
+    padding: 10px 40px; /* Añade espacio interno para mejorar la apariencia del botón */
+    font-weight: bold; /* Hace que el texto del enlace sea más destacado */
 }
 
+/* 
+   Establece el color del texto para los títulos <h1>, <h2> y <h3>.
+   Se utiliza la variable --color-texto-titulo para facilitar la personalización.
+*/
+h1, h2, h3 {
+    color: var(--color-texto-titulo); /* Aplica el color definido en las variables CSS */
+}
+
+/* 
+    Estilos para la cabecera <header>.
+    Se define su posición dentro del grid, se le asigna una imagen de fondo y se ajusta su presentación con flexbox.
+*/
 header {
-    grid-area: header;
-    background-image: url("./img/fondo.jpg");
-    background-size: cover;
-    border-bottom-left-radius: 5px;
-    display: flex;
-    justify-content: space-between;
+    grid-area: header; /* Asigna el área del grid para la cabecera */
+    background-image: url("./img/fondo.jpg"); /* Establece una imagen de fondo */
+    background-size: cover; /* Ajusta el fondo para cubrir completamente el área */
+    border-bottom-left-radius: 5px; /* Redondea la esquina inferior izquierda */
+    display: flex; /* Usa flexbox para organizar los elementos dentro del header */
+    justify-content: space-between; /* Distribuye los elementos de forma equitativa a lo largo del header */
 }
 
-header div{
-    margin: 80px 40px;
-}
-header img{
-    max-height: 300px;
-}
-
-h1, h2, h3{
-    color: var(--color-texto-titulo);
+/* 
+    Estilos para los elementos dentro del <header>.
+    Se define el margen para los <div> y el tamaño máximo para las imágenes dentro del encabezado.
+*/
+header div {
+    margin: 80px 40px; /* Establece márgenes internos para los div dentro del header */
 }
 
+header img {
+    max-height: 300px; /* Limita la altura máxima de las imágenes en el header */
+}
+
+
+/* 
+    Estilos para el <aside>, que contiene información personal del usuario.
+    Se define su posición dentro del grid y se le asigna un fondo personalizado.
+*/
 aside {
-    grid-area: aside;
-    background-color: var(--color-fondo-tarjeta);
-    margin-right: 20px;
+    grid-area: aside; /* Ubica el aside en el área correspondiente dentro del grid */
+    background-color: var(--color-fondo-tarjeta); /* Aplica un fondo con la variable CSS */
+    margin-right: 20px; /* Añade un margen derecho para separación visual */
+    border-bottom-right-radius: 5px; /* Redondea la esquina inferior derecha */
 }
-aside img{
-    max-width: 80%;
-    border-radius: 100px;
-    margin: 20px 20px;
+
+/* 
+    Estilos para imágenes dentro del <aside>.
+    Se ajusta su tamaño y se les aplica un borde redondeado para mejorar la estética.
+*/
+aside img {
+    max-width: 80%; /* Limita el ancho máximo de la imagen */
+    border-radius: 100px; /* Aplica bordes redondeados para un efecto visual más atractivo */
+    margin: 20px 20px; /* Agrega espacio alrededor de la imagen */
 }
-aside img:hover{
-    transform: scale(1.5);
-    transition: transform 0.3s;
+
+/* 
+    Efecto hover para las imágenes dentro del <aside>.
+    Al pasar el cursor sobre la imagen, se aumenta su tamaño con una transición suave.
+*/
+aside img:hover {
+    transform: scale(1.5); /* Aumenta el tamaño de la imagen en un 50% */
+    transition: transform 0.3s; /* Aplica una transición de 0.3 segundos para que el cambio sea progresivo */
 }
-aside>div{
-    padding: 20px 10px;
-    border-bottom: 2px solid var(--color-fondo);
+/* 
+    Estilos para los elementos <div> dentro del <aside>.
+    Se agrega un padding y un borde inferior para separar visualmente las secciones.
+*/
+aside > div {
+    padding: 20px 10px; /* Espaciado interno */
+    border-bottom: 2px solid var(--color-fondo); /* Línea divisoria entre secciones */
 }
-aside>div:last-of-type{
+
+/* 
+    Se elimina la línea divisoria del último <div> dentro del <aside> 
+    para evitar un borde innecesario en la última sección para un mejor diseño.
+*/
+aside > div:last-of-type {
     border-bottom: none;
 }
 
-.presentacion div, .idioma div, .formacion div{
-    display: flex;
-    justify-content: space-between; 
+/* 
+    Secciones de presentación, idiomas y formación.
+    Se utiliza flexbox para alinear los elementos en una disposición equilibrada.
+*/
+.presentacion div, .idioma div, .formacion div {
+    display: flex; /* Activa flexbox */
+    justify-content: space-between; /* Distribuye los elementos a lo largo del contenedor */
 }
 
-.presentacion span:last-of-type, .idioma{
-    color: var(--color-texto-titulo)
+/* 
+    Ajuste de color para los textos dentro de las secciones de presentación e idiomas.
+    Se usa la variable para mantener la coherencia visual en la interfaz.
+*/
+.presentacion span:last-of-type, .idioma {
+    color: var(--color-texto-titulo);
 }
 
-progress{
-    appearance: none;   
+/* 
+    Ajuste de apariencia para la barra de progreso.
+    Se elimina el estilo predeterminado del navegador.
+*/
+progress {
+    appearance: none;
 }
 
+/* 
+    Estilos para la barra de progreso en navegadores WebKit.
+    Se ajusta el fondo y el diseño de los valores de progreso.
+*/
 ::-webkit-progress-bar {
-    background-color: var(--color-fondo);
-    border-radius: 5px;
+    background-color: var(--color-fondo); /* Fondo de la barra de progreso */
+    border-radius: 5px; /* Bordes redondeados */
 }
 
 ::-webkit-progress-inner-element {
-    height: 5px;
-}
-::-webkit-progress-value {
-    background-color: var(--color-boton);
-    border-radius: 5px;
+    height: 5px; /* Define el grosor de la barra */
 }
 
-.redes{
+::-webkit-progress-value {
+    background-color: var(--color-boton); /* Color del progreso */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* 
+    Estilos para la sección de redes sociales.
+    Se usa flexbox para distribuir los elementos de manera equilibrada.
+*/
+.redes {
     display: flex;
 }
-.redes a{
+
+/* 
+    Ajuste de estilos para los enlaces dentro de la sección de redes.
+    Se eliminan los estilos de fondo y se centra el contenido.
+*/
+.redes a {
     background-color: transparent;
     padding: unset;
-    display: flex ;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.redes img{
+/* 
+    Define el tamaño de los íconos de redes sociales.
+*/
+.redes img {
     width: 30px;
 }
 
+/* 
+    Estilos para la sección principal <main>.
+    Se define su posición dentro del grid y se centra el contenido.
+*/
 main {
-    grid-area: main;
-    text-align: center;
+    grid-area: main; /* Ubica el main en su área asignada dentro del grid */
+    text-align: center; /* Centra el texto dentro del main */
 }
 
-#tarjetasContainer{
-    display: flex;
-    flex-wrap: wrap;
-    gap : 20px;
-    
-    
+/* 
+    Contenedor de tarjetas de proyectos.
+    Se usa flexbox para distribuir los elementos, permitiendo que se ajusten automáticamente.
+*/
+#tarjetasContainer {
+    display: flex; /* Activa flexbox para organizar las tarjetas */
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten y pasen a la siguiente línea si es necesario */
+    gap: 20px; /* Espaciado entre las tarjetas */
 }
-.proyecto{
-    flex-basis: 314px;
-    flex-grow: 1;
-    flex-shrink: 1;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+
+/* 
+    Estilos para cada tarjeta de proyecto.
+    Se define su tamaño base y se permite que crezcan o reduzcan según el espacio disponible.
+*/
+.proyecto {
+    flex-basis: 314px; /* Define el ancho base de cada tarjeta */
+    flex-grow: 1; /* Permite que las tarjetas crezcan si hay espacio disponible */
+    flex-shrink: 1; /* Permite que las tarjetas reduzcan su tamaño si es necesario */
+    display: flex; /* Utiliza flexbox para organizar el contenido dentro de la tarjeta */
+    flex-direction: column; /* Ordena el contenido de la tarjeta en columna */
+    text-align: center; /* Centra el texto dentro de la tarjeta */
+    
+    /* Efecto de sombra para destacar visualmente las tarjetas */
     box-shadow: 10px 10px 87px 19px rgba(0,0,0,0.75);
     -webkit-box-shadow: 10px 10px 87px 19px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 87px 19px rgba(0,0,0,0.75);
 }
 
-.tecnologia{
-    margin-left: 5px;
-    transition: all 0.3s;
-    user-select: none;
+/* 
+    Estilos para la clase .tecnologia.
+    Se define el margen izquierdo, una transición suave y se desactiva la selección de texto.
+*/
+.tecnologia {
+    margin-left: 5px; /* Agrega un pequeño margen izquierdo */
+    transition: all 0.3s; /* Aplica una transición de 0.3 segundos para cambios en todos los estilos */
+    user-select: none; /* Evita que el usuario pueda seleccionar el texto del elemento */
 }
 
-.tecnologia:hover{
-    color: var(--color-boton);
+/* 
+    Efecto cuando el cursor pasa sobre los elementos con clase .tecnologia.
+    Se cambia el color del texto al definido por la variable --color-boton.
+*/
+.tecnologia:hover {
+    color: var(--color-boton); /* Aplica un cambio de color al pasar el cursor */
 }
 
-.proyecto a{
-    text-align: center;
-    border-top-right-radius: 0px;
-    border-top-left-radius: 0px;
-    margin-top: auto;
-
-}
-.proyecto img{
-    height: 150px;
-    object-fit: cover;
-    filter: grayscale(0.6);
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+/* 
+    Estilos para los enlaces dentro de la clase .proyecto.
+    Se centra el texto, se ajustan las esquinas superiores y se posiciona el enlace automáticamente al final.
+*/
+.proyecto a {
+    text-align: center; /* Centra el texto dentro del enlace */
+    border-top-right-radius: 0px; /* Se deja sin redondear la esquina superior derecha */
+    border-top-left-radius: 0px; /* Se deja sin redondear la esquina superior izquierda */
+    margin-top: auto; /* Posiciona el enlace en la parte inferior de la tarjeta de proyecto */
 }
 
-.proyecto img:hover{
-    filter: grayscale(0);
-    transition: 0.3s;
-    transform: scale(1.1);
-    transition: transform 0.3s;
-
-
+/* 
+    Estilos para las imágenes dentro de la clase .proyecto.
+    Se define un tamaño fijo y se aplica un filtro de escala de grises para dar un efecto visual sutil.
+*/
+.proyecto img {
+    height: 150px; /* Establece una altura fija para todas las imágenes */
+    object-fit: cover; /* Ajusta la imagen para que cubra su contenedor sin deformarse */
+    filter: grayscale(0.6); /* Aplica un filtro de escala de grises con 60% de opacidad */
+    border-top-left-radius: 5px; /* Redondea la esquina superior izquierda */
+    border-top-right-radius: 5px; /* Redondea la esquina superior derecha */
 }
 
-.proyecto div{
-    margin: 0 20px;
+/* 
+    Efecto hover en imágenes dentro de la clase .proyecto.
+    Se quita el filtro de escala de grises, se amplía la imagen ligeramente y se aplican transiciones suaves.
+*/
+.proyecto img:hover {
+    filter: grayscale(0); /* Restaura la imagen a su color original */
+    transition: 0.3s; /* Aplica una transición para cambios de filtro */
+    transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el cursor */
+    transition: transform 0.3s; /* Aplica una transición suave al cambio de escala */
 }
 
-.tarjeta{
-    background-color: var(--color-fondo-tarjeta);
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    
+/* 
+    Estilos para los elementos <div> dentro de la clase .proyecto.
+    Se define un margen lateral para mejorar la distribución del contenido.
+*/
+.proyecto div {
+    margin: 0 20px; /* Agrega un margen de 20px a los lados */
 }
 
+/* 
+    Estilos para la clase .tarjeta.
+    Se define el fondo, el borde redondeado y la estructura flexible en columna.
+*/
+.tarjeta {
+    background-color: var(--color-fondo-tarjeta); /* Aplica el color de fondo definido en la variable */
+    border-radius: 5px; /* Redondea las esquinas del contenedor */
+    display: flex; /* Utiliza flexbox para la organización del contenido */
+    flex-direction: column; /* Organiza los elementos dentro de la tarjeta en columna */
+}
+
+/* 
+    Estilos para el pie de página <footer>.
+    Se ubica dentro del grid, se centra el texto y se ajusta el espaciado superior.
+*/
 footer {
-    grid-area: footer;
-    text-align: center;
-    padding-top: 50px;
-    font-size: small;
+    grid-area: footer; /* Asigna el área dentro del grid */
+    text-align: center; /* Centra el contenido del footer */
+    padding-top: 50px; /* Agrega un espacio superior para separación visual */
+    font-size: small; /* Define un tamaño de fuente más pequeño */
 }
 
-
+/* 
+    Sección de contacto.
+    Se centra y se le agrega un margen superior e inferior para mejor distribución.
+*/
 #contacto {
-    margin: 40px auto;
-    text-align: center;
+    margin: 40px auto; /* Define márgenes automáticos en los lados y 40px arriba y abajo */
+    text-align: center; /* Centra el contenido dentro del contenedor */
 }
 
+/* 
+    Estilos para el formulario de contacto.
+    Se usa flexbox para organizar los elementos en columna, se limita el ancho y se ajusta el fondo.
+*/
 form {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    margin: auto;
-    background-color: var(--color-fondo-tarjeta);
-    padding: 20px;
-    border-radius: 5px;
+    display: flex; /* Activa flexbox */
+    flex-direction: column; /* Organiza los elementos en columna */
+    max-width: 400px; /* Define un ancho máximo para evitar que se expanda demasiado */
+    margin: auto; /* Centra el formulario dentro de su contenedor */
+    background-color: var(--color-fondo-tarjeta); /* Aplica el fondo definido en las variables */
+    padding: 20px; /* Agrega espacio interno */
+    border-radius: 5px; /* Redondea las esquinas */
 }
 
+/* 
+    Estilos para las etiquetas <label>.
+    Se ajusta la alineación, el tamaño y el color del texto.
+*/
 label {
-    text-align: left;
-    font-size: large;
-    font-weight: bold;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: var(--color-texto);
+    text-align: left; /* Alinea el texto a la izquierda */
+    font-size: large; /* Define un tamaño grande de fuente */
+    font-weight: bold; /* Resalta el texto en negrita */
+    margin-top: 10px; /* Agrega un espacio superior */
+    margin-bottom: 10px; /* Agrega espacio inferior */
+    color: var(--color-texto); /* Aplica el color de texto definido en las variables */
 }
 
+/* 
+    Estilos para los campos de entrada y área de texto.
+    Se eliminan los bordes predeterminados y se redondean los bordes.
+*/
 input, textarea {
-    width: auto;    
-    border: none;
-    border-radius: 5px;
+    width: auto; /* Permite que el ancho se ajuste automáticamente */
+    border: none; /* Elimina los bordes predeterminados */
+    border-radius: 5px; /* Aplica esquinas redondeadas */
 }
 
+/* 
+    Estilos para el botón de envío del formulario.
+    Se ajusta el color, el tamaño y el diseño visual.
+*/
 button {
-    background-color: var(--color-boton);
-    color: var(--color-fondo);
-    font-size: large;
-    font-weight: bold;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
+    background-color: var(--color-boton); /* Aplica el color de fondo del botón */
+    color: var(--color-fondo); /* Define el color del texto dentro del botón */
+    font-size: large; /* Define un tamaño de fuente grande */
+    font-weight: bold; /* Resalta el texto en negrita */
+    padding: 10px; /* Espaciado interno */
+    border: none; /* Elimina bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Indica que el botón es interactivo */
+    margin-top: 20px; /* Agrega espacio superior */
 }
 
-@media(max-width: 650px){
-    body{
-        grid-template-columns: 1fr;   
-        grid-template-areas: 
-        "header"  "aside"  "main" "footer";
-        
-    }
-    header{
-        background-image: url("./img/fondo.jpg");
-        background-size: cover;
-        border-bottom-left-radius: 5px;
-        display: flex;
-        justify-content: center;
-    }   
-    header div{
-        margin: 20px;
-    }
-    header img{
-        max-height: 200px;
-        flex-shrink: 1;
-        margin-top: auto;
-    }
-    aside, main {
-        padding: 0px 20px;
-    }
-    aside{
-        margin-right: 0px;
-        margin-bottom: 20px;
-        margin-top: 20px;
-    }
-    aside img{
-        max-width: 150px;
-        border-radius: 100%;
-        display: block;
-        margin: 0 auto;
-    }
+/* 
+    Media query para pantallas con un ancho máximo de 650px.
+    Ajusta la estructura de la página para que sea más adaptable en dispositivos móviles.
+*/
+@media (max-width: 650px) {
     
-    .redes{
-        justify-content: space-around;
-        ;
+    /* 
+        Modifica la disposición del grid en el <body>.
+        Se reorganizan las áreas para adaptarse a una única columna.
+    */
+    body {
+        grid-template-columns: 1fr; /* Define una sola columna */
+        grid-template-areas: 
+            "header"
+            "aside"
+            "main"
+            "footer"; /* Reorganiza las secciones en formato vertical */
+    }
+
+    /* 
+        Ajuste de estilos para el <header>.
+        Se centra el contenido y se mantiene la imagen de fondo.
+    */
+    header {
+        background-image: url("./img/fondo.jpg"); /* Mantiene la imagen de fondo */
+        background-size: cover; /* Ajusta el fondo para cubrir toda el área */
+        display: flex; /* Usa flexbox para centrar el contenido */
+        justify-content: center; /* Centra los elementos dentro del header */
+    }
+
+    /* 
+        Reducción de margen en los <div> dentro del header para mejorar la distribución.
+    */
+    header div {
+        margin: 20px; /* Reduce el margen en dispositivos más pequeños */
+    }
+
+    /* 
+        Ajuste de tamaño para las imágenes dentro del <header>.
+        Se reduce la altura y se adapta su comportamiento en flexbox.
+    */
+    header img {
+        max-height: 200px; /* Define una altura máxima menor en pantallas pequeñas */
+        flex-shrink: 1; /* Permite que la imagen reduzca su tamaño si es necesario */
+        margin-top: auto; /* Asegura que la imagen se posicione correctamente dentro del header */
+    }
+
+    /* 
+        Ajuste de espaciado para <aside> y <main>.
+    */
+    aside, main {
+        padding: 0px 20px; /* Agrega un padding lateral para mejor visualización */
+    }
+
+    /* 
+        Modificaciones en el <aside>.
+        Se ajustan los márgenes para mejorar la apariencia en dispositivos móviles.
+    */
+    aside {
+        margin-right: 0px; /* Se elimina el margen derecho */
+        margin-bottom: 20px; /* Agrega margen inferior para separación */
+        margin-top: 20px; /* Agrega margen superior */
+    }
+
+    /* 
+        Ajuste del tamaño de la imagen de perfil dentro del <aside>.
+        Se centra en pantalla y se reduce su tamaño.
+    */
+    aside img {
+        max-width: 150px; /* Reduce el tamaño máximo de la imagen */
+        border-radius: 100%; /* Aplica bordes redondeados */
+        display: block; /* Asegura que la imagen se visualice correctamente */
+        margin: 0 auto; /* Centra la imagen */
+    }
+
+    /* 
+        Ajuste de la distribución de redes sociales en dispositivos móviles.
+        Se alinean los íconos de forma más equitativa.
+    */
+    .redes {
+        justify-content: space-around; /* Distribuye los elementos de forma uniforme */
     }
 }
 
