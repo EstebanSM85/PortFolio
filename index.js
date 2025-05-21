@@ -245,7 +245,6 @@ document.querySelectorAll(".proyecto a, .redes a").forEach(link => {
     });
 });
 
-/*
 //para mandar el form
 document.querySelector("form").addEventListener("submit", function(event) {
     event.preventDefault(); // Evita recargar la página
@@ -265,4 +264,4 @@ document.querySelector("form").addEventListener("submit", function(event) {
         console.error("Error:", error);
         alert("Error al enviar el mensaje.");
     });
-});*/
+});
