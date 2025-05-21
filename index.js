@@ -244,3 +244,25 @@ document.querySelectorAll(".proyecto a, .redes a").forEach(link => {
         alert("Vas a ser redirigido a un enlace externo.");
     });
 });
+
+
+//para mandar el form
+document.querySelector("form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Evita recargar la página
+
+    const formData = new FormData(this);
+
+    fetch("https://estebansm85.ct.ws/contacto.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log("Respuesta del servidor:", data);
+        alert("Mensaje enviado correctamente!");
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("Error al enviar el mensaje.");
+    });
+});
