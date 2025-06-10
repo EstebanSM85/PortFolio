@@ -6,9 +6,10 @@
 :root{
     --color-texto-titulo: #ffffff; /* Color del texto de los títulos */
     --color-texto: rgba(255, 255, 255, 0.867); /* Color general del texto con cierta transparencia */
-    --color-boton: #058d4e; /* Color de fondo para los botones */
-    --color-fondo: #091e55; /* Color de fondo de la página */
-    --color-fondo-tarjeta: #4511be5e; /* Color de fondo de las tarjetas */
+    --color-boton: #E6E4C6; /* Color de fondo para los botones */
+    --color-fondo: #0E3A47; /* Color de fondo de la página */
+    --color-fondo-tarjeta: #ffffff27
+    ; /* Color de fondo de las tarjetas */
 }
 
 /* 

@@ -246,22 +246,22 @@ document.querySelectorAll(".proyecto a, .redes a").forEach(link => {
 });
 
 //para mandar el form
+
+emailjs.init("4Ee--GQmPwOCU9Um8"); // Reemplaza TU_USER_ID con tu ID de usuario
+
 document.querySelector("form").addEventListener("submit", function(event) {
-    event.preventDefault(); // Evita recargar la página
+    event.preventDefault();
 
-    const formData = new FormData(this);
+    const serviceID = "service_088ua0g"; // Reemplaza con tu Service ID
+    const templateID = "template_q48w9lp"; // Reemplaza con tu Template ID
+    const form = this;
 
-    fetch("https://estebansm85.ct.ws/contacto.php", {
-        method: "POST",
-        body: formData
-    })
-    .then(response => response.text())
-    .then(data => {
-        console.log("Respuesta del servidor:", data);
-        alert("Mensaje enviado correctamente!");
-    })
-    .catch(error => {
-        console.error("Error:", error);
-        alert("Error al enviar el mensaje.");
-    });
+    emailjs.sendForm(serviceID, templateID, form)
+        .then(() => {
+            alert("¡Mensaje enviado correctamente!");
+            form.reset();
+        }, (error) => {
+            console.error("Error:", error);
+            alert("Error al enviar el mensaje.");
+        });
 });
