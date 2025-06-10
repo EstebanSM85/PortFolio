@@ -43,8 +43,8 @@ a {
 }
 
 /* 
-   Establece el color del texto para los títulos <h1>, <h2> y <h3>.
-   Se utiliza la variable --color-texto-titulo para facilitar la personalización.
+Establece el color del texto para los títulos <h1>, <h2> y <h3>.
+Se utiliza la variable --color-texto-titulo para facilitar la personalización.
 */
 h1, h2, h3 {
     color: var(--color-texto-titulo); /* Aplica el color definido en las variables CSS */
